@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sparsh Portfolio | Enterprise Software, Cloud & Digital Engineering Solutions</title>
+  <meta name="description" content="Sparsh Portfolio - Delivering state-of-the-art enterprise software engineering, bespoke e-commerce ecosystems like Jaju's Mart, cloud architectures, and modern web applications.">
+  <meta name="keywords" content="Sparsh Portfolio, Jaju's Mart, Web Development, Software Engineering, Full Stack, Cloud Solutions, Digital Engineering">
+  <meta name="author" content="Sparsh Portfolio">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sparsh Portfolio | Enterprise Engineering & Solutions">
+  <meta property="og:description" content="Explore cutting-edge digital experiences, e-commerce systems including Jaju's Mart, and cloud infrastructure engineered by Sparsh Portfolio.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sparsh Portfolio | Enterprise Engineering & Solutions">
+  <meta name="twitter:description" content="Explore custom cloud solutions, web platforms, and flagship systems like Jaju's Mart.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              cyan: '#06b6d4',
+              emerald: '#10b981',
+              dark: '#090d16',
+              card: '#0f172a',
+              border: 'rgba(255, 255, 255, 0.08)'
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 3s ease-in-out infinite alternate'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            glow: {
+              '0%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.2)' },
+              '100%': { boxShadow: '0 0 35px rgba(6, 182, 212, 0.5)' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    ::-webkit-scrollbar { width: 7px; }
+    ::-webkit-scrollbar-track { background: #090d16; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+    
+    .glass-card {
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-4px);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 16px 32px -8px rgba(99, 102, 241, 0.15);
+    }
+    .glass-nav {
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .neon-text-gradient {
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 40%, #818cf8 70%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .page-section {
+      display: none;
+      opacity: 0;
+      transform: translateY(12px) scale(0.99);
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .page-section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .bg-grid-pattern {
+      background-size: 38px 38px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-500 selection:text-white min-h-screen flex flex-col relative overflow-x-hidden bg-grid-pattern">
+
+  <div class="fixed top-0 left-1/4 w-[600px] h-[600px] bg-brand-600/10 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse-slow"></div>
+  <div class="fixed bottom-10 right-10 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+
+  <div id="toast-container" class="fixed top-20 right-4 md:right-8 z-50 flex flex-col gap-3 max-w-sm pointer-events-none"></div>
+
+  <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <a href="#home" onclick="navigateTo('home'); return false;" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-500 to-cyan-400 p-[2px] shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform duration-300">
+            <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+              <span class="font-display font-extrabold text-xl text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-cyan-400">S</span>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-display font-bold text-xl tracking-tight text-white group-hover:text-brand-400 transition-colors">Sparsh</span>
+              <span class="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-semibold tracking-wider uppercase">Portfolio</span>
+            </div>
+            <p class="text-[10px] text-slate-400 tracking-wider font-mono">ENTERPRISE SOLUTIONS</p>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center p-1.5 rounded-full bg-slate-900/80 border border-white/10 shadow-inner">
+          <button onclick="navigateTo('home')" data-nav="home" class="nav-link px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 text-white bg-brand-600/30 border border-brand-500/30 shadow-sm">Home</button>
+          <button onclick="navigateTo('about')" data-nav="about" class="nav-link px-4 py-2 text-sm font-medium rounded-full text-slate-300 hover:text-white transition-all duration-200">About Us</button>
+          <button onclick="navigateTo('projects')" data-nav="projects" class="nav-link px-4 py-2 text-sm font-medium rounded-full text-slate-300 hover:text-white transition-all duration-200">Projects</button>
+          <button onclick="navigateTo('services')" data-nav="services" class="nav-link px-4 py-2 text-sm font-medium rounded-full text-slate-300 hover:text-white transition-all duration-200">Services</button>
+          <button onclick="navigateTo('contact')" data-nav="contact" class="nav-link px-4 py-2 text-sm font-medium rounded-full text-slate-300 hover:text-white transition-all duration-200 flex items-center gap-1.5">
+            <span>Contact Us</span>
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          </button>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-3">
+          <button onclick="navigateTo('contact')" class="relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-semibold rounded-xl group bg-gradient-to-br from-brand-500 to-cyan-500 hover:from-brand-500 hover:to-cyan-400 text-white shadow-lg shadow-brand-500/20 hover:shadow-cyan-500/30 transition-all duration-300">
+            <span class="relative px-5 py-2.5 transition-all ease-in duration-200 bg-slate-950 rounded-[10px] group-hover:bg-opacity-0 flex items-center gap-2">
+              <span>Start Project</span>
+              <i data-lucide="sparkles" class="w-4 h-4 text-cyan-400 group-hover:text-white transition-colors"></i>
+            </span>
+          </button>
+        </div>
+
+        <button id="mobile-toggle-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white focus:outline-none">
+          <i data-lucide="menu" id="mobile-menu-icon" class="w-6 h-6"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-white/10 px-4 pt-3 pb-6 space-y-2">
+      <button onclick="navigateTo('home'); toggleMobileMenu()" class="w-full text-left px-4 py-2.5 rounded-lg text-slate-200 hover:bg-white/5 font-medium flex items-center justify-between">
+        <span>Home</span>
+        <i data-lucide="home" class="w-4 h-4 text-slate-400"></i>
+      </button>
+      <button onclick="navigateTo('about'); toggleMobileMenu()" class="w-full text-left px-4 py-2.5 rounded-lg text-slate-200 hover:bg-white/5 font-medium flex items-center justify-between">
+        <span>About Us</span>
+        <i data-lucide="info" class="w-4 h-4 text-slate-400"></i>
+      </button>
+      <button onclick="navigateTo('projects'); toggleMobileMenu()" class="w-full text-left px-4 py-2.5 rounded-lg text-slate-200 hover:bg-white/5 font-medium flex items-center justify-between">
+        <span>Projects Showcase</span>
+        <span class="text-xs bg-brand-500/20 text-brand-300 px-2 py-0.5 rounded">Featured</span>
+      </button>
+      <button onclick="navigateTo('services'); toggleMobileMenu()" class="w-full text-left px-4 py-2.5 rounded-lg text-slate-200 hover:bg-white/5 font-medium flex items-center justify-between">
+        <span>Services & Capabilities</span>
+        <i data-lucide="layers" class="w-4 h-4 text-slate-400"></i>
+      </button>
+      <button onclick="navigateTo('contact'); toggleMobileMenu()" class="w-full text-left px-4 py-2.5 rounded-lg text-slate-200 hover:bg-white/5 font-medium flex items-center justify-between">
+        <span class="flex items-center gap-2">
+          <span>Contact Us</span>
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        </span>
+        <i data-lucide="send" class="w-4 h-4 text-emerald-400"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+
+    <!-- HOME PAGE -->
+    <section id="page-home" class="page-section active max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
+      <div class="flex justify-center mb-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border border-brand-500/30 text-xs font-medium text-slate-300 shadow-sm animate-pulse-slow">
+          <span class="flex h-2 w-2 relative">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span>Architecting Next-Gen Enterprise Platforms</span>
+          <span class="text-slate-500">|</span>
+          <span class="text-brand-400 font-semibold flex items-center gap-1">Open for Bookings</span>
+        </div>
+      </div>
+
+      <div class="text-center max-w-4xl mx-auto space-y-6">
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight leading-tight">
+          Engineering Scalable <br>
+          <span class="neon-text-gradient">Digital Ecosystems</span> & Commerce.
+        </h1>
+        <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+          Sparsh Portfolio delivers custom cloud applications, performant digital infrastructure, and full-stack software tailored for hyper-growth businesses.
+        </p>
+
+        <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <button onclick="navigateTo('projects')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-600 via-indigo-600 to-cyan-500 text-white font-semibold shadow-xl shadow-brand-500/25 hover:shadow-cyan-500/40 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 group">
+            <span>Explore Showcase</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+          </button>
+          
+          <button onclick="navigateTo('contact')" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card hover:bg-slate-800/80 border border-white/10 text-slate-200 font-semibold hover:border-brand-500/40 hover:text-white transition-all duration-300 flex items-center justify-center gap-2">
+            <i data-lucide="message-square" class="w-4 h-4 text-cyan-400"></i>
+            <span>Schedule Consultation</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mt-16 md:mt-24">
+        <div class="relative p-1 rounded-3xl bg-gradient-to-r from-cyan-500/30 via-brand-500/30 to-purple-500/30">
+          <div class="glass-card rounded-[22px] p-6 sm:p-10 relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div class="lg:col-span-7 space-y-6">
+                <div class="flex items-center gap-3 flex-wrap">
+                  <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    Live Production Project
+                  </span>
+                  <span class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-500/20 text-brand-300 border border-brand-500/30">
+                    Flagship E-Commerce
+                  </span>
+                </div>
+
+                <h2 class="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
+                  Jaju's Mart — Next-Generation Grocery & Retail Platform
+                </h2>
+
+                <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
+                  A high-velocity, responsive digital supermarket platform designed with lightning-fast catalog navigation, dynamic cart operations, and streamlined checkout workflows.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-3 pt-4">
+                  <a href="https://jaju-s-mart.onrender.com" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold text-sm shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:scale-105 transition-all flex items-center gap-2">
+                    <span>Visit Live Store</span>
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                  </a>
+
+                  <button onclick="copyProjectLink('https://jaju-s-mart.onrender.com')" class="px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white text-sm border border-white/5 transition flex items-center gap-2">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                    <span>Copy Link</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="lg:col-span-5">
+                <div class="rounded-2xl overflow-hidden border border-white/10 bg-slate-950 p-3 shadow-2xl relative">
+                  <div class="relative overflow-hidden rounded-xl aspect-[16/10] bg-slate-900">
+                    <img 
+                      src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=900&q=80" 
+                      alt="Jaju's Mart Interface Mockup"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT PAGE -->
+    <section id="page-about" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-400 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20">Our DNA</span>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white mt-3 tracking-tight">Engineering Digital Mastery</h2>
+        <p class="text-slate-400 mt-4 text-base sm:text-lg">
+          We bridge bold technical ideas and high-performance production ecosystems.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card p-8 rounded-2xl border border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center mb-6">
+            <i data-lucide="target" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Our Mission</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            To empower modern retail, commerce, and enterprise brands through clean software code and fault-tolerant infrastructure.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl border border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center mb-6">
+            <i data-lucide="cpu" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Engineering Mindset</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Zero-bloat codebases, high observability, edge caching, and scalable architecture.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl border border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-6">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Client Partnership</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Direct communication, continuous deployment, and dependable engineering support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS PAGE -->
+    <section id="page-projects" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
+      <div class="mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">Portfolio Gallery</span>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white mt-3 tracking-tight">Enterprise Case Studies</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="glass-card p-6 rounded-2xl border border-cyan-500/30 flex flex-col justify-between">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden rounded-xl bg-slate-900 mb-4">
+              <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80" alt="Jaju's Mart" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-bold text-white">Jaju's Mart</h3>
+            <p class="text-slate-300 text-sm mt-2">Full-featured online grocery & supermarket ecosystem designed for high speed and mobile usability.</p>
+          </div>
+          <div class="pt-6">
+            <a href="https://jaju-s-mart.onrender.com" target="_blank" class="w-full py-2.5 px-3 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 text-xs font-semibold flex items-center justify-center gap-1.5 transition">
+              <span>Open Live Platform</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border border-white/5 flex flex-col justify-between">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden rounded-xl bg-slate-900 mb-4">
+              <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" alt="Nova TeleHealth" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-bold text-white">Nova TeleHealth</h3>
+            <p class="text-slate-300 text-sm mt-2">Real-time patient diagnostics platform with video consults and telemetry sync.</p>
+          </div>
+          <div class="pt-6">
+            <button onclick="navigateTo('contact')" class="w-full py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-semibold">Request Briefing</button>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl border border-white/5 flex flex-col justify-between">
+          <div>
+            <div class="aspect-[16/10] overflow-hidden rounded-xl bg-slate-900 mb-4">
+              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80" alt="Apex Capital" class="w-full h-full object-cover">
+            </div>
+            <h3 class="text-xl font-bold text-white">Apex Capital Ledger</h3>
+            <p class="text-slate-300 text-sm mt-2">Algorithmic portfolio reconciliation and financial tracking tools.</p>
+          </div>
+          <div class="pt-6">
+            <button onclick="navigateTo('contact')" class="w-full py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-semibold">Request Demo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES PAGE -->
+    <section id="page-services" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-brand-400 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20">Capabilities</span>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white mt-3 tracking-tight">Our Services</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card p-8 rounded-2xl border border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center mb-6">
+            <i data-lucide="shopping-cart" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">E-Commerce Platforms</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Custom online stores like <span class="text-cyan-400 font-semibold">Jaju's Mart</span> with payment processing and real-time inventory management.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl border border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-6">
+            <i data-lucide="code-2" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Custom Web Apps</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Interactive, responsive single-page applications and web dashboards built for performance.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl border border-white/5">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-6">
+            <i data-lucide="cloud-lightning" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-2">Cloud & Deployments</h3>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            Hosting configuration, custom domain setup, SSL, and automated CI/CD pipeline deployments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT US PAGE -->
+    <section id="page-contact" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">Get In Touch</span>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white mt-3 tracking-tight">Let's Discuss Your Project</h2>
+        <p class="text-slate-400 mt-4 text-base">Fill out the form below to receive a fast reply directly from our team.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        
+        <!-- Channels Info -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="glass-card p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <i data-lucide="headphones" class="w-5 h-5 text-cyan-400"></i>
+              <span>Direct Channels</span>
+            </h3>
+
+            <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-slate-900/60 border border-white/5">
+              <div class="p-3 rounded-xl bg-brand-500/20 text-brand-400">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400">Direct Email</p>
+                <a href="mailto:harshjaju07@gmail.com" class="text-sm font-semibold text-white hover:text-brand-300 transition">harshjaju07@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-3.5 rounded-2xl bg-slate-900/60 border border-white/5">
+              <div class="p-3 rounded-xl bg-emerald-500/20 text-emerald-400">
+                <i data-lucide="phone-call" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400">Call / WhatsApp</p>
+                <a href="https://wa.me/918302491321" target="_blank" class="text-sm font-semibold text-white hover:text-emerald-300 transition">+91 6350126800 / +91 8302491321</a>
+              </div>
+            </div>
+
+            <a href="https://wa.me/918302491321?text=Hello%20Sparsh%20Portfolio,%20I%20am%20interested%20in%20your%20services" target="_blank" class="w-full py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 transition">
+              <i data-lucide="message-circle" class="w-4 h-4"></i>
+              <span>Instant Chat on WhatsApp</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Working Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-card p-6 sm:p-10 rounded-3xl border border-white/10 shadow-2xl relative">
+            <h3 class="text-2xl font-display font-bold text-white mb-2">Send an Inquiry</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mb-8">Direct notification enabled to harshjaju07@gmail.com</p>
+
+            <form action="https://formsubmit.co/harshjaju07@gmail.com" method="POST" class="space-y-5">
+              
+              <!-- Required FormSubmit Hidden Fields -->
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_subject" value="New Inquiry from Sparsh Portfolio!">
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="space-y-1.5">
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Your Full Name *</label>
+                  <input 
+                    type="text" 
+                    name="Name" 
+                    required 
+                    placeholder="e.g. Sparsh Sharma" 
+                    class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-500"
+                  >
+                </div>
+
+                <div class="space-y-1.5">
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Email Address *</label>
+                  <input 
+                    type="email" 
+                    name="Email" 
+                    required 
+                    placeholder="client@example.com" 
+                    class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-500"
+                  >
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="space-y-1.5">
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Phone / WhatsApp</label>
+                  <input 
+                    type="tel" 
+                    name="Phone" 
+                    placeholder="+91 8302491321" 
+                    class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-500"
+                  >
+                </div>
+
+                <div class="space-y-1.5">
+                  <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Service Needed</label>
+                  <select 
+                    name="Service" 
+                    class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-white/10 text-white text-sm focus:outline-none focus:border-brand-500"
+                  >
+                    <option value="E-Commerce Store (like Jaju's Mart)">E-Commerce Store (like Jaju's Mart)</option>
+                    <option value="Enterprise Web App Development">Enterprise Web App Development</option>
+                    <option value="Cloud Architecture & DevOps">Cloud Architecture & DevOps</option>
+                    <option value="General Consultation">General Technical Consultation</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Project Subject *</label>
+                <input 
+                  type="text" 
+                  name="Subject" 
+                  required 
+                  placeholder="E.g., New Web Application Request" 
+                  class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-500"
+                >
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Project Brief *</label>
+                <textarea 
+                  name="Message" 
+                  rows="4" 
+                  required 
+                  placeholder="Tell us about the project goals, timeline, and requirements..." 
+                  class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-brand-500"
+                ></textarea>
+              </div>
+
+              <div class="pt-3">
+                <button 
+                  type="submit" 
+                  class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 via-indigo-600 to-cyan-500 hover:from-brand-500 hover:to-cyan-400 text-white font-bold text-sm tracking-wide shadow-xl shadow-brand-500/25 hover:shadow-cyan-500/35 transition-all duration-300 flex items-center justify-center gap-2 group"
+                >
+                  <span>Transmit Request to Engineering Lead</span>
+                  <i data-lucide="send" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-white/10 bg-slate-950/80 backdrop-blur-xl mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>© 2026 Sparsh Portfolio. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="https://jaju-s-mart.onrender.com" target="_blank" class="text-cyan-400 hover:underline">Jaju's Mart</a>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="hover:text-white transition flex items-center gap-1">
+          <span>Back to top</span>
+          <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    function navigateTo(pageId) {
+      const validPages = ['home', 'about', 'projects', 'services', 'contact'];
+      if (!validPages.includes(pageId)) pageId = 'home';
+
+      validPages.forEach(p => {
+        const el = document.getElementById(`page-${p}`);
+        if (el) {
+          if (p === pageId) {
+            el.classList.add('active');
+          } else {
+            el.classList.remove('active');
+          }
+        }
+      });
+
+      document.querySelectorAll('.nav-link').forEach(btn => {
+        const target = btn.getAttribute('data-nav');
+        if (target === pageId) {
+          btn.className = 'nav-link px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 text-white bg-brand-600/40 border border-brand-500/40 shadow-sm';
+        } else {
+          btn.className = 'nav-link px-4 py-2 text-sm font-medium rounded-full text-slate-300 hover:text-white transition-all duration-200';
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      if (window.location.hash !== `#${pageId}`) {
+        history.pushState(null, null, `#${pageId}`);
+      }
+
+      lucide.createIcons();
+    }
+
+    window.addEventListener('popstate', () => {
+      const hash = window.location.hash.replace('#', '') || 'home';
+      navigateTo(hash);
+    });
+
+    function copyProjectLink(url) {
+      const textarea = document.createElement("textarea");
+      textarea.value = url;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      alert("Link copied: " + url);
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const initialHash = window.location.hash.replace('#', '') || 'home';
+      navigateTo(initialHash);
+    });
+  </script>
+
+</body>
+</html>
