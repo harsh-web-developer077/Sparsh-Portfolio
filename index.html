@@ -86,9 +86,9 @@
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .glass-card-hover:hover {
-      transform: translateY(-4px);
-      border-color: rgba(99, 102, 241, 0.4);
-      box-shadow: 0 16px 32px -8px rgba(99, 102, 241, 0.15);
+      transform: translateY(-6px);
+      border-color: rgba(6, 182, 212, 0.5);
+      box-shadow: 0 20px 35px -8px rgba(6, 182, 212, 0.2);
     }
     .glass-nav {
       background: rgba(9, 13, 22, 0.85);
@@ -105,7 +105,7 @@
       display: none;
       opacity: 0;
       transform: translateY(12px) scale(0.99);
-      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .page-section.active {
       display: block;
@@ -125,8 +125,7 @@
   <div class="fixed top-0 left-1/4 w-[600px] h-[600px] bg-brand-600/10 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse-slow"></div>
   <div class="fixed bottom-10 right-10 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
 
-  <div id="toast-container" class="fixed top-20 right-4 md:right-8 z-50 flex flex-col gap-3 max-w-sm pointer-events-none"></div>
-
+  <!-- NAVIGATION -->
   <header class="sticky top-0 z-40 glass-nav transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
@@ -173,6 +172,7 @@
       </div>
     </div>
 
+    <!-- Mobile Dropdown Menu -->
     <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-white/10 px-4 pt-3 pb-6 space-y-2">
       <button onclick="navigateTo('home'); toggleMobileMenu()" class="w-full text-left px-4 py-2.5 rounded-lg text-slate-200 hover:bg-white/5 font-medium flex items-center justify-between">
         <span>Home</span>
@@ -202,7 +202,7 @@
 
   <main class="flex-grow">
 
-    <!-- HOME PAGE -->
+    <!-- TAB 1: HOME PAGE -->
     <section id="page-home" class="page-section active max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
       <div class="flex justify-center mb-6">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card border border-brand-500/30 text-xs font-medium text-slate-300 shadow-sm animate-pulse-slow">
@@ -238,6 +238,7 @@
         </div>
       </div>
 
+      <!-- Featured Banner on Home -->
       <div class="mt-16 md:mt-24">
         <div class="relative p-1 rounded-3xl bg-gradient-to-r from-cyan-500/30 via-brand-500/30 to-purple-500/30">
           <div class="glass-card rounded-[22px] p-6 sm:p-10 relative overflow-hidden">
@@ -291,7 +292,7 @@
       </div>
     </section>
 
-    <!-- ABOUT PAGE -->
+    <!-- TAB 2: ABOUT PAGE -->
     <section id="page-about" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-xs font-bold uppercase tracking-wider text-brand-400 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20">Our DNA</span>
@@ -334,27 +335,31 @@
       </div>
     </section>
 
-    <!-- PROJECTS SHOWCASE PAGE -->
+    <!-- TAB 3: PROJECTS SHOWCASE (CONTAINED ONLY IN PROJECTS TAB) -->
     <section id="page-projects" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">Production Portfolio</span>
         <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white mt-3 tracking-tight">Engineered Solutions</h2>
         <p class="text-slate-400 mt-4 text-base sm:text-lg">
-          Live enterprise platforms, custom storefronts, and conversion-focused web architectures.
+          Tap anywhere on a project card to instantly explore the live production platform.
         </p>
       </div>
 
-      <!-- PROJECTS GRID (Perfect Symmetric 2-Column Responsive Layout) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+      <!-- INTERACTIVE PROJECTS GRID (3 Equal Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
 
-        <!-- 1. JAJU'S MART -->
-        <div class="glass-card glass-card-hover rounded-3xl p-8 flex flex-col justify-between h-full border border-white/10 group">
+        <!-- CARD 1: JAJU'S MART -->
+        <div onclick="window.open('https://jaju-s-mart.onrender.com', '_blank')" class="glass-card glass-card-hover rounded-3xl p-7 flex flex-col justify-between cursor-pointer border border-white/10 group relative overflow-hidden">
+          <div class="absolute -right-12 -top-12 w-28 h-28 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/20 transition-all"></div>
           <div>
             <div class="flex items-center justify-between mb-5">
-              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-cyan-400"></span> E-Commerce Platform
+              <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span> E-Commerce
               </span>
-              <span class="text-xs font-mono text-slate-500">Live Production</span>
+              <span class="text-xs font-mono text-emerald-400 font-semibold flex items-center gap-1">
+                <span>Live</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+              </span>
             </div>
 
             <h3 class="text-2xl font-display font-bold text-white group-hover:text-cyan-400 transition-colors mb-3">
@@ -362,37 +367,37 @@
             </h3>
 
             <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              Full-scale responsive supermarket storefront engineered with lightning-fast catalog browsing, reactive shopping cart state, and direct checkout workflows.
+              Full-featured online retail storefront with high-velocity catalog search, live cart synchronization, and direct order workflows.
             </p>
 
             <div class="flex flex-wrap gap-2 mb-8">
-              <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-white/5 text-xs text-slate-300 font-mono">Tailwind CSS</span>
-              <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-white/5 text-xs text-slate-300 font-mono">JavaScript ES6</span>
-              <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-white/5 text-xs text-slate-300 font-mono">Cart Engine</span>
-              <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-white/5 text-xs text-slate-300 font-mono">Render CDN</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900/90 border border-white/10 text-xs text-slate-300 font-mono">Tailwind CSS</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900/90 border border-white/10 text-xs text-slate-300 font-mono">JavaScript ES6</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900/90 border border-white/10 text-xs text-slate-300 font-mono">Cart State</span>
             </div>
           </div>
 
-          <div class="pt-5 border-t border-white/10 flex items-center justify-between">
-            <a href="https://jaju-s-mart.onrender.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-cyan-500 text-white font-semibold text-xs tracking-wider uppercase hover:opacity-95 transition-all shadow-md shadow-cyan-500/20">
-              <span>Live Store</span>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+            <span class="text-cyan-400 font-bold uppercase tracking-wider flex items-center gap-1">
+              <span>Launch Store</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </a>
-            <button onclick="copyProjectLink('https://jaju-s-mart.onrender.com')" class="text-xs text-slate-400 hover:text-white transition flex items-center gap-1">
-              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-              <span>Copy Link</span>
-            </button>
+            </span>
+            <span class="text-slate-500 font-mono text-[11px]">jaju-s-mart.onrender.com</span>
           </div>
         </div>
 
-        <!-- 2. TITAN GYM -->
-        <div class="glass-card glass-card-hover rounded-3xl p-8 flex flex-col justify-between h-full border border-white/10 group">
+        <!-- CARD 2: TITAN GYM -->
+        <div onclick="window.open('https://titan-gym-pha0.onrender.com', '_blank')" class="glass-card glass-card-hover rounded-3xl p-7 flex flex-col justify-between cursor-pointer border border-white/10 group relative overflow-hidden">
+          <div class="absolute -right-12 -top-12 w-28 h-28 bg-brand-500/10 rounded-full blur-2xl group-hover:bg-brand-500/20 transition-all"></div>
           <div>
             <div class="flex items-center justify-between mb-5">
-              <span class="text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-brand-500/10 text-brand-300 border border-brand-500/30 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-brand-400"></span> Fitness & Lead Acquisition
+              <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-brand-500/10 text-brand-300 border border-brand-500/30 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span> Client Acquisition
               </span>
-              <span class="text-xs font-mono text-slate-500">Live Production</span>
+              <span class="text-xs font-mono text-emerald-400 font-semibold flex items-center gap-1">
+                <span>Live</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+              </span>
             </div>
 
             <h3 class="text-2xl font-display font-bold text-white group-hover:text-brand-300 transition-colors mb-3">
@@ -400,33 +405,64 @@
             </h3>
 
             <p class="text-slate-300 text-sm leading-relaxed mb-6">
-              High-impact industrial fitness web app with zero-scroll dynamic multi-view architecture, real-time baseline BMI metric calculator, tiered memberships, and direct WhatsApp lead dispatch.
+              Industrial fitness web application with dynamic zero-scroll tab switching, baseline BMI calculator, membership tiers, and instant WhatsApp lead dispatch.
             </p>
 
             <div class="flex flex-wrap gap-2 mb-8">
-              <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-white/5 text-xs text-slate-300 font-mono">Tailwind CSS</span>
-              <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-white/5 text-xs text-slate-300 font-mono">Dynamic Views</span>
-              <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-white/5 text-xs text-slate-300 font-mono">WhatsApp API</span>
-              <span class="px-3 py-1 rounded-lg bg-slate-900/80 border border-white/5 text-xs text-slate-300 font-mono">SEO Meta</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900/90 border border-white/10 text-xs text-slate-300 font-mono">Tailwind CSS</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900/90 border border-white/10 text-xs text-slate-300 font-mono">BMI Engine</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900/90 border border-white/10 text-xs text-slate-300 font-mono">WhatsApp API</span>
             </div>
           </div>
 
-          <div class="pt-5 border-t border-white/10 flex items-center justify-between">
-            <a href="https://titan-gym-pha0.onrender.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-cyan-500 text-white font-semibold text-xs tracking-wider uppercase hover:opacity-95 transition-all shadow-md shadow-brand-500/20">
-              <span>Live Demo</span>
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+            <span class="text-brand-300 font-bold uppercase tracking-wider flex items-center gap-1">
+              <span>Launch Web App</span>
               <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </a>
-            <a href="https://github.com/harsh-web-developer077/TITAN-GYM" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-white transition flex items-center gap-1 font-mono">
-              <i data-lucide="github" class="w-3.5 h-3.5"></i>
-              <span>GitHub</span>
-            </a>
+            </span>
+            <span class="text-slate-500 font-mono text-[11px]">titan-gym-pha0.onrender.com</span>
+          </div>
+        </div>
+
+        <!-- CARD 3: COMING SOON -->
+        <div class="glass-card rounded-3xl p-7 flex flex-col justify-between border border-dashed border-white/20 relative group bg-slate-950/40 opacity-90">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <span class="text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span> In Pipeline
+              </span>
+              <span class="text-xs font-mono text-slate-500 font-medium">Q4 2026</span>
+            </div>
+
+            <h3 class="text-2xl font-display font-bold text-slate-200 mb-3 flex items-center gap-2">
+              <span>Next SaaS Platform</span>
+              <i data-lucide="lock" class="w-5 h-5 text-slate-500"></i>
+            </h3>
+
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Enterprise digital software suite currently in active development. Features cloud automation, real-time analytics, and client management.
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900/60 border border-white/5 text-xs text-slate-500 font-mono">Cloud API</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900/60 border border-white/5 text-xs text-slate-500 font-mono">Analytics</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-900/60 border border-white/5 text-xs text-slate-500 font-mono">Coming Soon</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+            <span class="text-amber-400/90 font-bold uppercase tracking-wider flex items-center gap-1">
+              <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+              <span>Coming Soon</span>
+            </span>
+            <span class="text-slate-600 font-mono text-[11px]">Under Construction</span>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- SERVICES PAGE -->
+    <!-- TAB 4: SERVICES PAGE -->
     <section id="page-services" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-xs font-bold uppercase tracking-wider text-brand-400 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20">Capabilities</span>
@@ -466,7 +502,7 @@
       </div>
     </section>
 
-    <!-- CONTACT US PAGE -->
+    <!-- TAB 5: CONTACT US PAGE -->
     <section id="page-contact" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">Get In Touch</span>
@@ -476,7 +512,7 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
         
-        <!-- Channels Info -->
+        <!-- Direct Channels -->
         <div class="lg:col-span-5 space-y-6">
           <div class="glass-card p-6 sm:p-8 rounded-3xl border border-white/10 space-y-6">
             <h3 class="text-xl font-bold text-white flex items-center gap-2">
@@ -511,14 +547,13 @@
           </div>
         </div>
 
-        <!-- Working Form -->
+        <!-- FormSubmit Lead Form -->
         <div class="lg:col-span-7">
           <div class="glass-card p-6 sm:p-10 rounded-3xl border border-white/10 shadow-2xl relative">
             <h3 class="text-2xl font-display font-bold text-white mb-2">Send an Inquiry</h3>
             <p class="text-xs sm:text-sm text-slate-400 mb-8">Direct notification enabled to harshjaju07@gmail.com</p>
 
             <form action="https://formsubmit.co/harshjaju07@gmail.com" method="POST" class="space-y-5">
-              
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_template" value="table">
               <input type="hidden" name="_subject" value="New Inquiry from Sparsh Portfolio!">
