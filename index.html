@@ -334,35 +334,43 @@
       </div>
     </section>
 
-    <!-- PROJECTS PAGE -->
-    <section id="page-projects" class="page-section max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-20">
-      <div class="mb-12">
-        <span class="text-xs font-bold uppercase tracking-wider text-cyan-400 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20">Portfolio Gallery</span>
-        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white mt-3 tracking-tight">Enterprise Case Studies</h2>
-      </div>
+   <!-- PROJECTS GRID (3 Equal Cards with Identical Texture & Size) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="glass-card p-6 rounded-2xl border border-cyan-500/30 flex flex-col justify-between">
+        <!-- 1. JAJU'S MART -->
+        <div class="rounded-2xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm p-6 flex flex-col justify-between hover:border-cyan-500/50 transition-all duration-300 group shadow-lg shadow-black/40">
           <div>
-            <div class="aspect-[16/10] overflow-hidden rounded-xl bg-slate-900 mb-4">
-              <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80" alt="Jaju's Mart" class="w-full h-full object-cover">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                E-Commerce
+              </span>
+              <span class="text-xs text-zinc-500 font-semibold">Live</span>
             </div>
-            <h3 class="text-xl font-bold text-white">Jaju's Mart</h3>
-            <p class="text-slate-300 text-sm mt-2">Full-featured online grocery & supermarket ecosystem designed for high speed and mobile usability.</p>
+            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">
+              Jaju's Mart
+            </h3>
+            <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+              Full-featured online retail storefront with integrated product catalog, cart management, and seamless customer ordering workflows.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6 text-xs text-zinc-400">
+              <span class="px-2.5 py-1 rounded-md bg-zinc-800/80 border border-zinc-700/60">HTML5</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-800/80 border border-zinc-700/60">Tailwind CSS</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-800/80 border border-zinc-700/60">JavaScript</span>
+            </div>
           </div>
-          <div class="pt-6">
-            <a href="https://jaju-s-mart.onrender.com" target="_blank" class="w-full py-2.5 px-3 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 text-xs font-semibold flex items-center justify-center gap-1.5 transition">
-              <span>Open Live Platform</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          <div class="flex items-center gap-4 pt-4 border-t border-zinc-800">
+            <a href="https://jajus-mart.onrender.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-cyan-400 hover:text-cyan-300 transition-colors">
+              Live Demo &rarr;
             </a>
           </div>
         </div>
 
-     <div class="rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 flex flex-col justify-between hover:border-cyan-500/50 transition-all group">
+        <!-- 2. TITAN GYM -->
+        <div class="rounded-2xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm p-6 flex flex-col justify-between hover:border-cyan-500/50 transition-all duration-300 group shadow-lg shadow-black/40">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
-                Fitness & Client Acquisition
+              <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                Fitness & Leads
               </span>
               <span class="text-xs text-zinc-500 font-semibold">Live</span>
             </div>
@@ -370,38 +378,51 @@
               TITAN GYM
             </h3>
             <p class="text-zinc-400 text-sm leading-relaxed mb-6">
-              High-converting industrial web app for a fitness facility featuring dynamic multi-view architecture, working baseline BMI calculator, membership tiers, and instant WhatsApp lead dispatch.
+              High-impact fitness web app featuring dynamic multi-view navigation, real-time BMI metric tool, tier plans, and WhatsApp lead dispatch.
             </p>
             <div class="flex flex-wrap gap-2 mb-6 text-xs text-zinc-400">
-              <span class="px-2.5 py-1 rounded-md bg-zinc-800 border border-zinc-700">Tailwind CSS</span>
-              <span class="px-2.5 py-1 rounded-md bg-zinc-800 border border-zinc-700">JavaScript</span>
-              <span class="px-2.5 py-1 rounded-md bg-zinc-800 border border-zinc-700">WhatsApp Lead API</span>
-              <span class="px-2.5 py-1 rounded-md bg-zinc-800 border border-zinc-700">SEO & Schema</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-800/80 border border-zinc-700/60">Tailwind CSS</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-800/80 border border-zinc-700/60">JavaScript</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-800/80 border border-zinc-700/60">WhatsApp API</span>
             </div>
           </div>
-          <div class="flex items-center gap-4 pt-4 border-t border-zinc-800/80">
-            <a href="https://titan-gym-pha0.onrender.com" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-cyan-400 hover:text-cyan-300 transition-colors">
+          <div class="flex items-center gap-4 pt-4 border-t border-zinc-800">
+            <a href="https://titan-gym-pha0.onrender.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-cyan-400 hover:text-cyan-300 transition-colors">
               Live Demo &rarr;
             </a>
-            <a href="https://github.com/harsh-web-developer077/TITAN-GYM" target="_blank" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-zinc-400 hover:text-white transition-colors">
+            <a href="https://github.com/harsh-web-developer077/TITAN-GYM" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-400 hover:text-white transition-colors">
               Source Code
             </a>
           </div>
         </div>
 
-      </div>
-        <div class="glass-card p-6 rounded-2xl border border-white/5 flex flex-col justify-between">
+        <!-- 3. PROJECT THREE -->
+        <div class="rounded-2xl border border-zinc-800 bg-zinc-900/60 backdrop-blur-sm p-6 flex flex-col justify-between hover:border-cyan-500/50 transition-all duration-300 group shadow-lg shadow-black/40">
           <div>
-            <div class="aspect-[16/10] overflow-hidden rounded-xl bg-slate-900 mb-4">
-              <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80" alt="Apex Capital" class="w-full h-full object-cover">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                Web Application
+              </span>
+              <span class="text-xs text-zinc-500 font-semibold">Active</span>
             </div>
-            <h3 class="text-xl font-bold text-white">Apex Capital Ledger</h3>
-            <p class="text-slate-300 text-sm mt-2">Algorithmic portfolio reconciliation and financial tracking tools.</p>
+            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">
+              Sparsh Ecosystem
+            </h3>
+            <p class="text-zinc-400 text-sm leading-relaxed mb-6">
+              Custom digital portfolio and business showcase engineered with modern responsive layout, dynamic integrations, and clean visual architecture.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6 text-xs text-zinc-400">
+              <span class="px-2.5 py-1 rounded-md bg-zinc-800/80 border border-zinc-700/60">Frontend Architecture</span>
+              <span class="px-2.5 py-1 rounded-md bg-zinc-800/80 border border-zinc-700/60">UI/UX</span>
+            </div>
           </div>
-          <div class="pt-6">
-            <button onclick="navigateTo('contact')" class="w-full py-2.5 px-3 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 text-xs font-semibold">Request Demo</button>
+          <div class="flex items-center gap-4 pt-4 border-t border-zinc-800">
+            <a href="#" class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-cyan-400 hover:text-cyan-300 transition-colors">
+              View Project &rarr;
+            </a>
           </div>
         </div>
+
       </div>
     </section>
 
