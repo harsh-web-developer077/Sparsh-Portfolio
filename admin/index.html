@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Sparsh Portfolio</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#080d18">
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-body">
+
+  <div class="admin-layout">
+
+    <aside class="admin-sidebar" id="adminSidebar">
+      <a class="admin-brand" href="/">
+        <span class="brand-mark">S</span>
+        <span>
+          Sparsh
+          <small>ADMIN PANEL</small>
+        </span>
+      </a>
+
+      <div class="sidebar-label">WORKSPACE</div>
+
+      <nav class="admin-nav">
+        <button class="admin-nav-link active" data-section="overview">
+          <span>▦</span> Overview
+        </button>
+
+        <button class="admin-nav-link" data-section="users">
+          <span>♙</span> Users
+        </button>
+
+        <button class="admin-nav-link" data-section="bookings">
+          <span>▤</span> Bookings
+        </button>
+
+        <button class="admin-nav-link" data-section="messages">
+          <span>✉</span> Messages
+        </button>
+
+        <button class="admin-nav-link" data-section="offers">
+          <span>◇</span> Offers
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="admin-profile">
+          <div class="profile-avatar">A</div>
+          <div>
+            <strong>Administrator</strong>
+            <small id="adminEmail">Loading...</small>
+          </div>
+        </div>
+
+        <button class="logout-button" id="logoutButton">
+          ↪ Sign out
+        </button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+
+      <header class="admin-topbar">
+        <div>
+          <button class="mobile-menu" id="mobileMenu">☰</button>
+          <span class="topbar-label">SPARSH / ADMIN</span>
+        </div>
+
+        <div class="topbar-right">
+          <span class="online-indicator"></span>
+          <span>System connected</span>
+        </div>
+      </header>
+
+      <div class="admin-content">
+
+        <div class="page-heading">
+          <div>
+            <span class="eyebrow">CONTROL CENTER</span>
+            <h1 id="pageTitle">Overview</h1>
+            <p id="pageSubtitle">Monitor your portfolio business from one place.</p>
+          </div>
+
+          <button class="refresh-button" id="refreshButton">
+            ↻ Refresh
+          </button>
+        </div>
+
+        <div class="admin-notice" id="adminNotice" role="status"></div>
+
+        <!-- OVERVIEW -->
+        <section class="admin-section active" id="section-overview">
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span>Total Users</span>
+              <strong id="totalUsers">—</strong>
+              <small>Registered accounts</small>
+            </article>
+
+            <article class="stat-card">
+              <span>Total Bookings</span>
+              <strong id="totalBookings">—</strong>
+              <small>Service enquiries</small>
+            </article>
+
+            <article class="stat-card">
+              <span>Messages</span>
+              <strong id="totalMessages">—</strong>
+              <small>Customer messages</small>
+            </article>
+
+            <article class="stat-card">
+              <span>Active Offers</span>
+              <strong id="activeOffers">—</strong>
+              <small>Currently active</small>
+            </article>
+          </div>
+
+          <div class="admin-panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Booking status</h2>
+                <p>Distribution of your service bookings</p>
+              </div>
+            </div>
+
+            <div id="bookingStatusSummary" class="status-summary">
+              <p class="muted">Loading booking statistics...</p>
+            </div>
+          </div>
+
+          <div class="admin-panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Quick actions</h2>
+                <p>Manage important areas of your website</p>
+              </div>
+            </div>
+
+            <div class="quick-actions">
+              <button data-section="bookings">View bookings →</button>
+              <button data-section="messages">Read messages →</button>
+              <button data-section="offers">Manage offers →</button>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- USERS -->
+        <section class="admin-section" id="section-users">
+          <div class="admin-panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Registered users</h2>
+                <p>Customer accounts on your website</p>
+              </div>
+              <span class="panel-count" id="usersCount">0 users</span>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Role</th>
+                    <th>Joined</th>
+                  </tr>
+                </thead>
+                <tbody id="usersTable">
+                  <tr><td colspan="5">Loading users...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- BOOKINGS -->
+        <section class="admin-section" id="section-bookings">
+          <div class="admin-panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Service bookings</h2>
+                <p>Review enquiries and update their status</p>
+              </div>
+
+              <select id="bookingFilter" class="admin-select">
+                <option value="">All statuses</option>
+                <option>Pending</option>
+                <option>Under Review</option>
+                <option>In Discussion</option>
+                <option>Accepted</option>
+                <option>Completed</option>
+                <option>Cancelled</option>
+              </select>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Customer</th>
+                    <th>Service</th>
+                    <th>Reference</th>
+                    <th>Status</th>
+                    <th>Update status</th>
+                  </tr>
+                </thead>
+                <tbody id="bookingsTable">
+                  <tr><td colspan="5">Loading bookings...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- MESSAGES -->
+        <section class="admin-section" id="section-messages">
+          <div class="admin-panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Customer messages</h2>
+                <p>Messages received through your website</p>
+              </div>
+              <span class="panel-count" id="messagesCount">0 messages</span>
+            </div>
+
+            <div id="messagesList" class="messages-list">
+              <p class="muted">Loading messages...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- OFFERS -->
+        <section class="admin-section" id="section-offers">
+
+          <div class="admin-panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Create an offer</h2>
+                <p>Add a promotional offer to your website database</p>
+              </div>
+            </div>
+
+            <form id="offerForm" class="offer-form">
+
+              <div class="form-grid">
+                <div class="admin-field">
+                  <label for="offerTitle">Offer title</label>
+                  <input id="offerTitle" name="title" maxlength="120"
+                    placeholder="e.g. Festival Special" required>
+                </div>
+
+                <div class="admin-field">
+                  <label for="offerDiscount">Discount percentage</label>
+                  <input id="offerDiscount" name="discountPercentage"
+                    type="number" min="0" max="100" required
+                    placeholder="e.g. 20">
+                </div>
+
+                <div class="admin-field full-width">
+                  <label for="offerDescription">Description</label>
+                  <textarea id="offerDescription" name="description"
+                    rows="3" maxlength="1000"
+                    placeholder="Describe this offer..."></textarea>
+                </div>
+
+                <div class="admin-field">
+                  <label for="offerExpiry">Expiry date (optional)</label>
+                  <input id="offerExpiry" name="expiresAt" type="date">
+                </div>
+
+                <div class="admin-field checkbox-field">
+                  <label>
+                    <input type="checkbox" name="active" checked>
+                    Make this offer active
+                  </label>
+                </div>
+              </div>
+
+              <button class="admin-primary-button" type="submit">
+                + Create offer
+              </button>
+
+            </form>
+          </div>
+
+          <div class="admin-panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Existing offers</h2>
+                <p>Activate, deactivate or remove offers</p>
+              </div>
+            </div>
+
+            <div id="offersList" class="offers-list">
+              <p class="muted">Loading offers...</p>
+            </div>
+          </div>
+
+        </section>
+
+        <footer class="admin-footer">
+          © <span id="currentYear"></span> Sparsh Portfolio · Admin Workspace
+        </footer>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="/config.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
