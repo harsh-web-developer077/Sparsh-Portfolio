@@ -285,21 +285,33 @@ if (authForm) {
         "success"
       );
 
-      if (action === "signin") {
-        const requestedPage = new URLSearchParams(
-          window.location.search
-        ).get("next");
+      
+if (action === "signin") {
+  // Verify the logged-in user's role from the backend
+  const session = await apiRequest("/auth/me");
+  const loggedInUser = session.user || session;
 
-        const safePage =
-          requestedPage &&
-          /^[a-zA-Z0-9_-]+\.html$/.test(requestedPage)
-            ? requestedPage
-            : "dashboard.html";
+  const requestedPage = new URLSearchParams(
+    window.location.search
+  ).get("next");
 
-        setTimeout(() => {
-          window.location.href = safePage;
-        }, 700);
-      }
+  const safePage =
+    requestedPage &&
+    /^[a-zA-Z0-9_-]+\.html$/.test(requestedPage)
+      ? requestedPage
+      : "dashboard.html";
+
+  // Admin goes to admin dashboard
+  const destination =
+    loggedInUser.role === "admin"
+      ? "/admin/"
+      : safePage;
+
+  setTimeout(() => {
+    window.location.href = destination;
+  }, 700);
+}
+
 
       if (action === "signup") {
         setTimeout(() => {
