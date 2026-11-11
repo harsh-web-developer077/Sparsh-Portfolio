@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /signin.html
+Disallow: /signup.html
+Disallow: /forgot-password.html
+Disallow: /booking.html
+Disallow: /dashboard.html
+Sitemap: https://sparsh-portfolio-ihrz.onrender.com/sitemap.xml
