@@ -302,10 +302,10 @@ if (action === "signin") {
       : "dashboard.html";
 
   // Admin goes to admin dashboard
-  const destination =
-    loggedInUser.role === "admin"
-      ? "/admin/"
-      : safePage;
+const destination =
+  loggedInUser.role === "admin"
+    ? "/admin/index.html"
+    : safePage;
 
   setTimeout(() => {
     window.location.href = destination;
